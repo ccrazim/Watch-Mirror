@@ -17,14 +17,14 @@
           <input id="season-number" type="number" min="1" value="1">
           <label for="episode-number">Episode:</label>
           <input id="episode-number" type="number" min="1" value="1">
-          <button id="load-episode" type="button">Load episode</button>
+          <button id="load-episode" type="button">Load it</button>
         </span>
         <div class="player-url-row">
-          <span>If it says 'Please Disable Sandbox' or isn't loading, try <a id="player-url-link" href="#" target="_blank" rel="noopener noreferrer">this</a>.</span>
+          <span>If it is stuck loading, try <a id="player-url-link" href="#" target="_blank" rel="noopener noreferrer">this</a>.</span>
         </div>
       </div>
       <div id="player-container">
-        <h1>Loading...</h1>
+        <h1>Fetching...</h1>
       </div>
     </main>
     <script>
@@ -55,9 +55,9 @@
               const episode = Math.max(1, Number.parseInt(episodeInput.value, 10) || 1);
               seasonInput.value = season;
               episodeInput.value = episode;
-              iframe.src = `https://cinesrc.st/embed/tv/${tmdbId}?s=${season}&e=${episode}`;
+              iframe.src = `https://vidspark.to/tv/${tmdbId}/${season}/${episode}`;
             } else {
-              iframe.src = `https://cinesrc.st/embed/movie/${tmdbId}`;
+              iframe.src = `https://vidspark.to/movie/${tmdbId}`;
             }
           }
 
